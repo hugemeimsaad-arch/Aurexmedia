@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AUREX MEDIA | Next-Gen Performance Marketing & Meta Ads Agency</title>
+    
+    <!-- Google Fonts: Syne (Headings) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #02040a;
+            --bg-card: rgba(13, 18, 35, 0.65);
+            --bg-card-hover: rgba(22, 30, 56, 0.85);
+            --bg-glass: rgba(13, 18, 35, 0.7);
+            --accent-cyan: #00f2fe;
+            --accent-blue: #4facfe;
+            --accent-purple: #7928ca;
+            --accent-pink: #ff0080;
+            --accent-neon: #00ff87;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(0, 242, 254, 0.3);
+            --border-light: rgba(255, 255, 255, 0.08);
+            --gradient-primary: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #7928ca 100%);
+            --gradient-fire: linear-gradient(135deg, #7928ca 0%, #ff0080 100%);
+            --gradient-btn: linear-gradient(135deg, #00f2fe 0%, #7928ca 100%);
+            --gradient-glow: linear-gradient(90deg, #00f2fe, #7928ca, #ff0080, #00f2fe);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 40%, rgba(121, 40, 202, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 50% 80%, rgba(0, 255, 135, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        /* Animated Grid Overlay Background */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Container Padding Optimized for Mobile & Desktop */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Typography Override */
+        h1, h2, h3, .logo {
+            font-family: 'Syne', sans-serif;
+        }
+
+        /* Mobile First Navigation Bar */
+        nav {
+            background: rgba(2, 4, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-light);
+            padding: 14px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--gradient-btn);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.1rem;
+            -webkit-text-fill-color: initial;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(0, 242, 254, 0.4); }
+            100% { box-shadow: 0 0 30px rgba(121, 40, 202, 0.8); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+        }
+
+        .btn-nav {
+            background: var(--gradient-btn);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.7);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 70px 0 50px;
+            text-align: center;
+        }
+
+        .badge-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 242, 254, 0.08);
+            border: 1px solid var(--accent-cyan);
+            padding: 8px 18px;
+            border-radius: 50px;
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+            animation: float-badge 3s ease-in-out infinite;
+        }
+
+        @keyframes float-badge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 780px;
+            margin: 0 auto 35px;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            background: var(--gradient-btn);
+            color: #fff;
+            padding: 16px 36px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.5);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 45px rgba(0, 242, 254, 0.8);
+        }
+
+        .btn-hero-secondary {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-light);
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-hero-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 55px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            padding: 24px 18px;
+            border-radius: 18px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+        }
+
+        .stat-card h3 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            margin-bottom: 4px;
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        /* Section Title Header */
+        .section-title {
+            text-align: center;
+            margin: 80px 0 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title h2 span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-size: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Vertical Services Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 22px;
+        }
+
+        .service-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 28px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 12px 30px rgba(0, 242, 254, 0.15);
+            background: var(--bg-card-hover);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(0, 242, 254, 0.08);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+        }
+
+        .service-badge {
+            background: rgba(121, 40, 202, 0.2);
+            border: 1px solid rgba(121, 40, 202, 0.4);
+            color: #d8b4fe;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 22px;
+        }
+
+        .service-features li {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-features li i {
+            color: var(--accent-neon);
+        }
+
+        .btn-service-action {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-light);
+            color: #fff;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .service-card:hover .btn-service-action {
+            background: var(--gradient-btn);
+            border-color: transparent;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+        }
+
+        /* Proof & Case Studies Section */
+        .proofs-section {
+            background: rgba(10, 14, 26, 0.6);
+            padding: 70px 0;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            margin-top: 80px;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .proof-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 18px;
+            padding: 24px;
+            transition: 0.3s;
+        }
+
+        .proof-card:hover {
+            border-color: var(--accent-neon);
+            transform: translateY(-3px);
+        }
+
+        .proof-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .proof-tag {
+            background: rgba(0, 255, 135, 0.12);
+            border: 1px solid rgba(0, 255, 135, 0.3);
+            color: var(--accent-neon);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .proof-metric {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .proof-sub {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+
+        .proof-bar-container {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .proof-bar {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 4px;
+        }
+
+        /* FAQ Accordion Section */
+        .faq-section {
+            margin: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--border-glow);
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: 0.3s;
+        }
+
+        .faq-question i {
+            color: var(--accent-cyan);
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+            padding: 0 24px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.active {
+            border-color: var(--accent-cyan);
+            background: var(--bg-card-hover);
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-cyan);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 24px 20px 24px;
+        }
+
+        /* Booking Engine Section */
+        .booking-calculator-wrapper {
+            margin: 80px 0;
+            background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-main) 100%);
+            border: 1px solid var(--border-glow);
+            border-radius: 28px;
+            padding: 40px;
+            box-shadow: 0 0 50px rgba(0, 242, 254, 0.08);
+            position: relative;
+        }
+
+        .engine-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media(max-width: 992px) {
+            .engine-grid { grid-template-columns: 1fr; }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #e2e8f0;
+        }
+
+        .form-group label i {
+            color: var(--accent-cyan);
+            margin-right: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-cyan);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 18px rgba(0, 242, 254, 0.25);
+        }
+
+        .form-control option {
+            background-color: #0d1127;
+            color: #fff;
+        }
+
+        /* Projection Box */
+        .projection-display {
+            background: rgba(0, 242, 254, 0.03);
+            border: 1px dashed var(--accent-cyan);
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .projection-title {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .projection-leads {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        .projection-metrics {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .p-metric-item h5 {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .p-metric-item p {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-neon);
+        }
+
+        .btn-submit-booking {
+            width: 100%;
+            background: var(--gradient-btn);
+            color: #fff;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit-booking:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(0, 242, 254, 0.7);
+        }
+
+        .booking-status {
+            display: none;
+            margin-top: 16px;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .booking-status.success {
+            display: block;
+            background: rgba(0, 255, 135, 0.15);
+            border: 1px solid var(--accent-neon);
+            color: var(--accent-neon);
+        }
+
+        /* Direct Contact Buttons */
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            padding: 40px 24px;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .btn-tg {
+            background: #229ED9;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(34, 158, 217, 0.4);
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-mail {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-light);
+            color: #fff;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.15);
+        }
+
+        /* Floating WhatsApp Button for Mobile Phones */
+        .floating-wa-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+            z-index: 999;
+            text-decoration: none;
+            transition: 0.3s;
+            animation: pulse-wa 2s infinite;
+        }
+
+        @keyframes pulse-wa {
+            0% { transform: scale(1); box-shadow: 0 0 15px rgba(37, 211, 102, 0.5); }
+            50% { transform: scale(1.08); box-shadow: 0 0 30px rgba(37, 211, 102, 0.9); }
+            100% { transform: scale(1); box-shadow: 0 0 15px rgba(37, 211, 102, 0.5); }
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-light);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* OPTIMIZED MOBILE STYLING (Phones) */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { padding: 45px 0 30px; }
+            .hero h1 { font-size: 2.3rem; }
+            .hero p { font-size: 0.98rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .booking-calculator-wrapper { padding: 25px 18px; border-radius: 20px; }
+            .projection-leads { font-size: 2.3rem; }
+            .contact-btn { width: 100%; justify-content: center; }
+            .hero-actions { flex-direction: column; }
+            .btn-hero-primary, .btn-hero-secondary { width: 100%; justify-content: center; }
+            .faq-question { font-size: 0.95rem; padding: 16px 18px; }
+            .faq-answer { font-size: 0.88rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+
+    <!-- Mobile Floating WhatsApp Action Button -->
+    <a href="https://wa.me/917013909434" target="_blank" class="floating-wa-btn" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                AUREX MEDIA
+            </a>
+            <ul class="nav-links">
+                <li><a href="#niches">Niches</a></li>
+                <li><a href="#proofs">Proof</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#booking-engine">Appointment</a></li>
+            </ul>
+            <a href="https://wa.me/917013909434" target="_blank" class="btn-nav">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero container">
+        <div class="badge-hero"><i class="fa-solid fa-fire"></i> High-ROI Meta Ads Agency</div>
+        <h1>Scale Your Business With <span>Aggressive Meta Ads</span></h1>
+        <p>From Color Trading & Cricket Betting to Stock Market and Real Estate. We craft high-converting cloaked funnels that bypass ad blocks and deliver targeted leads.</p>
+        
+        <div class="hero-actions">
+            <a href="#booking-engine" class="btn-hero-primary"><i class="fa-solid fa-calendar-check"></i> Book Strategy Call</a>
+            <a href="https://wa.me/917013909434" target="_blank" class="btn-hero-secondary"><i class="fa-brands fa-whatsapp"></i> Instant Chat</a>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>₹5.0M+</h3>
+                <p>Monthly Ad Spend</p>
+            </div>
+            <div class="stat-card">
+                <h3>850K+</h3>
+                <p>Leads Generated</p>
+            </div>
+            <div class="stat-card">
+                <h3>99.6%</h3>
+                <p>Uptime Rate</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>Ban-Proof Setup</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Niches Grid -->
+    <section class="container" id="niches">
+        <div class="section-title">
+            <h2>Supported <span>Ad Verticals</span></h2>
+            <p>Select your vertical to instantly configure your daily budget and book a strategy launch call.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Niche 1 -->
+            <div class="service-card">
+                <div>
+                    <div class="service-header">
+                        <div class="service-icon"><i class="fa-solid fa-gamepad"></i></div>
+                        <span class="service-badge">High Volume</span>
+                    </div>
+                    <h3>Color Trading & Prediction</h3>
+                    <p>Low Cost-Per-Registration (CPR) and instant FTD conversion flows engineered for high volume gaming.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Low Cost-Per-Lead (₹3 - ₹4.5)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Anti-Ban Cloaked Landing Flow</li>
+                        <li><i class="fa-solid fa-circle-check"></i> High Initial Deposit Conversions</li>
+                    </ul>
+                </div>
+                <button onclick="selectNicheAndScroll('color')" class="btn-service-action"><i class="fa-solid fa-calculator"></i> Calculate & Book</button>
+            </div>
+
+            <!-- Niche 2 -->
+            <div class="service-card">
+                <div>
+                    <div class="service-header">
+                        <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <span class="service-badge">High Intent</span>
+                    </div>
+                    <h3>Stock Market & Forex</h3>
+                    <p>High-net-worth active traders delivered directly into your Telegram & WhatsApp advisory channels.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Target Serious Traders & Investors</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Direct Telegram & WhatsApp Funnels</li>
+                        <li><i class="fa-solid fa-circle-check"></i> High Trust Authority Creatives</li>
+                    </ul>
+                </div>
+                <button onclick="selectNicheAndScroll('stock')" class="btn-service-action"><i class="fa-solid fa-calculator"></i> Calculate & Book</button>
+            </div>
+
+            <!-- Niche 3 -->
+            <div class="service-card">
+                <div>
+                    <div class="service-header">
+                        <div class="service-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <span class="service-badge">Tournament Special</span>
+                    </div>
+                    <h3>Cricket Betting & Sports Books</h3>
+                    <p>Aggressive user acquisition campaigns designed specifically for IPL and international tournaments.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Tournament Scaling Execution</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Direct Telegram Channel Joins</li>
+                        <li><i class="fa-solid fa-circle-check"></i> High Retargeting Matrix</li>
+                    </ul>
+                </div>
+                <button onclick="selectNicheAndScroll('cricket')" class="btn-service-action"><i class="fa-solid fa-calculator"></i> Calculate & Book</button>
+            </div>
+
+            <!-- Niche 4 -->
+            <div class="service-card">
+                <div>
+                    <div class="service-header">
+                        <div class="service-icon"><i class="fa-solid fa-plane-up"></i></div>
+                        <span class="service-badge">Viral Gaming</span>
+                    </div>
+                    <h3>Aviator & Instant Games</h3>
+                    <p>High viral player acquisition funnels built for long-term retention and continuous deposit volume.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> High Viral Video Hook Creatives</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Optimized Player Lifetime Value</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Low Cost-Per-Acquisition</li>
+                    </ul>
+                </div>
+                <button onclick="selectNicheAndScroll('aviator')" class="btn-service-action"><i class="fa-solid fa-calculator"></i> Calculate & Book</button>
+            </div>
+
+            <!-- Niche 5 -->
+            <div class="service-card">
+                <div>
+                    <div class="service-header">
+                        <div class="service-icon"><i class="fa-solid fa-city"></i></div>
+                        <span class="service-badge">High Ticket</span>
+                    </div>
+                    <h3>Real Estate Properties</h3>
+                    <p>Verified, high-income buyer lead generation for luxury residential and commercial developments.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Pinpoint Location Radius Targeting</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Pre-screened High-Income Inquiries</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Verified Site Visit Bookings</li>
+                    </ul>
+                </div>
+                <button onclick="selectNicheAndScroll('realestate')" class="btn-service-action"><i class="fa-solid fa-calculator"></i> Calculate & Book</button>
+            </div>
+
+            <!-- Niche 6 -->
+            <div class="service-card">
+                <div>
+                    <div class="service-header">
+                        <div class="service-icon"><i class="fa-solid fa-sliders"></i></div>
+                        <span class="service-badge">Custom Execution</span>
+                    </div>
+                    <h3>Custom High-Risk / E-Commerce</h3>
+                    <p>Tailor-made Meta Ads setup for special products, custom funnels, and high-risk client models.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Custom Audience Research</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Dedicated Ad Account Management</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Full Pixel & Tracking Setup</li>
+                    </ul>
+                </div>
+                <button onclick="selectNicheAndScroll('custom')" class="btn-service-action"><i class="fa-solid fa-calculator"></i> Calculate & Book</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proofs Section -->
+    <section class="proofs-section" id="proofs">
+        <div class="container">
+            <div class="section-title" style="margin-top: 0;">
+                <h2>Campaign <span>Proof & Results</span></h2>
+                <p>Live metrics from active ad accounts running under AUREX MEDIA management.</p>
+            </div>
+
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-header">
+                        <span>Color Trading Niche</span>
+                        <span class="proof-tag">14.8x ROAS</span>
+                    </div>
+                    <div class="proof-metric">142,000+ Leads</div>
+                    <div class="proof-sub">Cost Per Lead: ₹2.90 - ₹3.80</div>
+                    <div class="proof-bar-container">
+                        <div class="proof-bar" style="width: 95%;"></div>
+                    </div>
+                </div>
+
+                <div class="proof-card">
+                    <div class="proof-header">
+                        <span>Stock Advisory Channel</span>
+                        <span class="proof-tag">9.2x ROAS</span>
+                    </div>
+                    <div class="proof-metric">28,500+ Traders</div>
+                    <div class="proof-sub">Cost Per Joiner: ₹16.20</div>
+                    <div class="proof-bar-container">
+                        <div class="proof-bar" style="width: 88%;"></div>
+                    </div>
+                </div>
+
+                <div class="proof-card">
+                    <div class="proof-header">
+                        <span>Luxury Real Estate</span>
+                        <span class="proof-tag">₹8.5Cr Closed</span>
+                    </div>
+                    <div class="proof-metric">620+ Site Visits</div>
+                    <div class="proof-sub">Qualified High-Income Buyers</div>
+                    <div class="proof-bar-container">
+                        <div class="proof-bar" style="width: 82%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="container faq-section" id="faq">
+        <div class="section-title">
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <p>Tap on any question below to reveal the answer.</p>
+        </div>
+
+        <div class="faq-container">
+            <!-- Question 1 -->
+            <div class="faq-item active" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>How do you run ads for high-risk / restricted niches without bans?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We use custom-built cloaking landing pages, safe-page redirects, dynamic pixel tracking, and agency-level Meta ad accounts. This protects your ad campaign from automated bans and ensures continuous, 24/7 ad delivery.
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>What happens after I submit an appointment booking on WhatsApp?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Once you submit the form, your appointment parameters (Name, Niche, Daily Budget, Date) are formatted into a direct message to our official WhatsApp (+91 7013909434). Our campaign strategist will confirm your call slot immediately.
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>What is the minimum daily budget required to start?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We recommend starting with a minimum daily budget of ₹1,000 to ₹2,000 to collect initial conversion data and optimize your pixel. For high-volume niches like Color Trading or Cricket Betting, scaling to ₹5,000+/day yields maximum ROAS.
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>How quickly can my Meta Ads campaign go live?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    After confirming your strategy booking and campaign details, our team configures your landing funnels, creatives, and ad setup within 12 to 24 hours.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator & WhatsApp Appointment Engine -->
+    <section class="container" id="booking-engine">
+        <div class="booking-calculator-wrapper">
+            <div class="section-title" style="margin-top: 0; margin-bottom: 35px;">
+                <h2>Calculate Strategy & <span>Book Appointment</span></h2>
+                <p>Fill out your details to calculate projected lead flow and dispatch your appointment booking straight to WhatsApp.</p>
+            </div>
+
+            <div class="engine-grid">
+                <!-- Form -->
+                <form id="appointment-form" onsubmit="handleWhatsAppAppointmentSubmit(event)">
+                    <div class="form-group">
+                        <label for="app-name"><i class="fa-solid fa-user"></i> Your Name / Brand Name *</label>
+                        <input type="text" id="app-name" class="form-control" placeholder="e.g. Rahul Sharma" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-phone"><i class="fa-solid fa-phone"></i> Phone / WhatsApp Number *</label>
+                        <input type="tel" id="app-phone" class="form-control" placeholder="+91 7013909434" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-niche"><i class="fa-solid fa-layer-group"></i> Select Your Niche *</label>
+                        <select id="app-niche" class="form-control" onchange="runCalculationEngine()" required>
+                            <option value="color">Color Trading & Prediction</option>
+                            <option value="stock">Stock Market & Forex Advisory</option>
+                            <option value="cricket">Cricket Betting & Sportsbooks</option>
+                            <option value="aviator">Aviator & Instant Games</option>
+                            <option value="realestate">Real Estate Properties</option>
+                            <option value="custom">Custom / Other Niche</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-budget"><i class="fa-solid fa-indian-rupee-sign"></i> Planned Daily Budget (₹) *</label>
+                        <input type="number" id="app-budget" class="form-control" value="5000" min="500" step="500" oninput="runCalculationEngine()" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-date"><i class="fa-solid fa-calendar-days"></i> Preferred Appointment Date *</label>
+                        <input type="date" id="app-date" class="form-control" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit-booking">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Send Appointment to WhatsApp
+                    </button>
+
+                    <div id="booking-status-box" class="booking-status"></div>
+                </form>
+
+                <!-- Calculation Output Box -->
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <div class="projection-display">
+                        <div class="projection-title">Projected Daily Results</div>
+                        <div class="projection-leads" id="calc-lead-count">1,250 - 1,660</div>
+                        <p style="color: var(--accent-cyan); font-weight: 700; margin-top: 6px;" id="calc-cpl-range">Est. Cost Per Lead: ₹3.00 - ₹4.50</p>
+                        
+                        <div class="projection-metrics">
+                            <div class="p-metric-item">
+                                <h5>Est. Monthly Reach</h5>
+                                <p id="calc-monthly-reach">450K - 600K</p>
+                            </div>
+                            <div class="p-metric-item">
+                                <h5>Target ROAS</h5>
+                                <p id="calc-target-roas">12x - 16x</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-light); padding: 18px; border-radius: 14px;">
+                        <h4 style="font-size: 0.95rem; color: #fff; margin-bottom: 6px;"><i class="fa-solid fa-bolt" style="color: var(--accent-neon);"></i> Direct WhatsApp Dispatch</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted);">Clicking the button formats your appointment details and opens WhatsApp with a pre-filled message sent directly to +91 7013909434.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Direct Contact Box -->
+    <section class="container" id="contact">
+        <div class="contact-box">
+            <h2 style="font-size: 2.3rem; margin-bottom: 10px;">Direct <span>Agency Hotlines</span></h2>
+            <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto;">Reach out immediately for custom ad setups and campaign launches.</p>
+            
+            <div class="contact-methods">
+                <a href="https://wa.me/917013909434" target="_blank" class="contact-btn btn-wa">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> WhatsApp: +91 7013909434
+                </a>
+                <a href="https://t.me/Aurexmedia01" target="_blank" class="contact-btn btn-tg">
+                    <i class="fa-brands fa-telegram" style="font-size: 1.3rem;"></i> Telegram: @Aurexmedia01
+                </a>
+                <a href="mailto:theaurexhq@gmail.com" class="contact-btn btn-mail">
+                    <i class="fa-solid fa-envelope" style="font-size: 1.2rem;"></i> theaurexhq@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AUREX MEDIA. All Rights Reserved. Engineered for High-Yield Meta Performance.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        // Benchmarks Data per Niche
+        const NICHE_BENCHMARKS = {
+            color: { minCpl: 3.0, maxCpl: 4.5, cpm: 120, roas: "12x - 16x" },
+            stock: { minCpl: 15.0, maxCpl: 25.0, cpm: 350, roas: "8x - 12x" },
+            cricket: { minCpl: 3.5, maxCpl: 6.0, cpm: 180, roas: "10x - 14x" },
+            aviator: { minCpl: 4.0, maxCpl: 7.0, cpm: 160, roas: "9x - 13x" },
+            realestate: { minCpl: 120.0, maxCpl: 220.0, cpm: 450, roas: "₹5Cr+ Closed" },
+            custom: { minCpl: 8.0, maxCpl: 15.0, cpm: 220, roas: "6x - 10x" }
+        };
+
+        // Calculation Engine
+        function runCalculationEngine() {
+            const nicheKey = document.getElementById('app-niche').value;
+            const budgetInput = parseFloat(document.getElementById('app-budget').value) || 0;
+            
+            const leadsOutput = document.getElementById('calc-lead-count');
+            const cplOutput = document.getElementById('calc-cpl-range');
+            const reachOutput = document.getElementById('calc-monthly-reach');
+            const roasOutput = document.getElementById('calc-target-roas');
+
+            const benchmark = NICHE_BENCHMARKS[nicheKey] || NICHE_BENCHMARKS.custom;
+
+            if (budgetInput >= 500) {
+                const maxDailyLeads = Math.floor(budgetInput / benchmark.minCpl);
+                const minDailyLeads = Math.floor(budgetInput / benchmark.maxCpl);
+
+                const dailyImpressions = Math.floor((budgetInput / benchmark.cpm) * 1000);
+                const monthlyReachMin = Math.floor((dailyImpressions * 25) / 1000);
+                const monthlyReachMax = Math.floor((dailyImpressions * 30) / 1000);
+
+                leadsOutput.innerText = `${minDailyLeads.toLocaleString()} - ${maxDailyLeads.toLocaleString()}`;
+                cplOutput.innerText = `Est. Cost Per Lead: ₹${benchmark.minCpl.toFixed(2)} - ₹${benchmark.maxCpl.toFixed(2)}`;
+                reachOutput.innerText = `${monthlyReachMin}K - ${monthlyReachMax}K`;
+                roasOutput.innerText = benchmark.roas;
+            } else {
+                leadsOutput.innerText = "Enter Budget";
+                cplOutput.innerText = "Min ₹500/day required";
+                reachOutput.innerText = "--";
+                roasOutput.innerText = "--";
+            }
+        }
+
+        // Auto Select Niche from Cards
+        function selectNicheAndScroll(nicheKey) {
+            const nicheSelect = document.getElementById('app-niche');
+            nicheSelect.value = nicheKey;
+            runCalculationEngine();
+            document.getElementById('booking-engine').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // FAQ Toggle Accordion Function
+        function toggleFaq(element) {
+            const allFaqs = document.querySelectorAll('.faq-item');
+            allFaqs.forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('active');
+                }
+            });
+            element.classList.toggle('active');
+        }
+
+        // WhatsApp Appointment Handler
+        function handleWhatsAppAppointmentSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('app-name').value.trim();
+            const phone = document.getElementById('app-phone').value.trim();
+            const nicheSelect = document.getElementById('app-niche');
+            const nicheText = nicheSelect.options[nicheSelect.selectedIndex].text;
+            const budget = document.getElementById('app-budget').value;
+            const date = document.getElementById('app-date').value;
+            const statusBox = document.getElementById('booking-status-box');
+
+            if (!name || !phone || !date) {
+                statusBox.className = "booking-status";
+                statusBox.style.display = "block";
+                statusBox.style.background = "rgba(255, 0, 128, 0.15)";
+                statusBox.style.color = "#ff0080";
+                statusBox.innerText = "Please fill in all appointment details.";
+                return;
+            }
+
+            statusBox.className = "booking-status success";
+            statusBox.innerText = `🎉 Appointment Reserved for ${name}! Opening WhatsApp...`;
+
+            // WhatsApp Message Formatting
+            const waMessage = encodeURIComponent(
+                `🚀 NEW APPOINTMENT BOOKING - AUREX MEDIA\n\n` +
+                `👤 Name: ${name}\n` +
+                `📞 Phone: ${phone}\n` +
+                `🎯 Niche: ${nicheText}\n` +
+                `💰 Planned Daily Budget: ₹${budget}/day\n` +
+                `📅 Appointment Date: ${date}\n\n` +
+                `Hi AUREX MEDIA, please confirm my campaign call slot!`
+            );
+
+            // Redirect to WhatsApp (+91 7013909434)
+            setTimeout(() => {
+                window.open(`https://wa.me/917013909434?text=${waMessage}`, '_blank');
+            }, 1000);
+        }
+
+        // Initialize Default Date Limit
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateInput = document.getElementById('app-date');
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
+            dateInput.value = tomorrow.toISOString().split('T')[0];
+
+            runCalculationEngine();
+        });
+    </script>
+</body>
+</html>
